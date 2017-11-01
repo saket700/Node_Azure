@@ -6,7 +6,7 @@ var index = require('./routes/index');
 var tasks = require('./routes/tasks');
 
 
-var port =3000;
+//var port =3000;
 var app = express();
 
 
@@ -27,6 +27,4 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use('/',index);
 app.use('/api',tasks);
 
-app.listen(port,function(){
-	console.log("server started on port: "+port);
-});
+app.listen(process.env.PORT || 3000);
